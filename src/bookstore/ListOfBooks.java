@@ -15,6 +15,7 @@ public class ListOfBooks {
            private Book[] books; // อาเรย์เก็บลิสหนังสือ
            private int totalBooks ; //จำนวนหนังสือทั้งหมด
            private int totalIncome; //รายได้รวม
+           private int maxspace = 100; //พื้นที่เก็บนส สูงสุด 100
            private boolean checkstock;
            public ListOfBooks(){
                books = new Book[100];
@@ -23,6 +24,7 @@ public class ListOfBooks {
            }
            
            public void addNewBook(Book addBook){ //เพิ่มชื่อหนังสือ
+               if(maxspace <= totalBooks){
                books[totalBooks] = addBook;
                totalBooks++;
                for(int i=0;i<totalBooks;i++){
@@ -36,7 +38,7 @@ public class ListOfBooks {
                    
                }
                System.out.println("Success logged the book ");
-               
+               }else{System.out.println("Not Enough Space for Adding a Book");}
            }
           
            

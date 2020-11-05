@@ -19,7 +19,7 @@ public class BookStore {
         do{
             System.out.println("\t: Amorn Peam Mick BookStore :\n");
             System.out.println("1.Add new book to stock");  
-            System.out.println("2.Sell a book in stock");
+            System.out.println("2.Sell a book i2n stock");
             System.out.println("3.Add Quantity a books");
             System.out.println("4.Show list the title of all the books in stock");
             System.out.println("5.List all the information about the books in stock");
