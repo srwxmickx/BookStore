@@ -29,7 +29,7 @@ public class ListOfBooks {
                    if(addBook.getTitle().equals(books[i].getTitle())){
                        String name = addBook.getTitle();
                        Scanner input = new Scanner(System.in);
-                       System.out.println("books is already in stock, how many additonal books would you like to stock?");
+                       System.out.println("books is already in stock");
                        int stock = input.nextInt();
                        addBookQuantity(name,stock);
                    }

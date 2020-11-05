@@ -73,7 +73,7 @@ public class BookStore {
   
             }
             
-        }while(select != '7');
+        }while(select != 7);
                
         
     }
