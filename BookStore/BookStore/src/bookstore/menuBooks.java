@@ -9,35 +9,37 @@ import java.util.Scanner;
 
 /**
  *
- * @author spide
+ * @author USER
  */
-public class BookStore {
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        ListOfBooks bookstore = new ListOfBooks();
-        int select;
-        do{
-            System.out.println("\t: Amorn Peam Mick BookStore :\n");
-            System.out.println("1.Add new book to stock");  
-            System.out.println("2.Sell a book i2n stock");
-            System.out.println("3.Add Quantity a books");
-            System.out.println("4.Show list the title of all the books in stock");
-            System.out.println("5.List all the information about the books in stock");
-            System.out.println("6.Print out the total income of the bookstore");
-            System.out.println("7.EXIT..");
+public class menuBooks {
+
+    ListOfBooks bookstore = new ListOfBooks();
+    Scanner input = new Scanner(System.in);
+    int select;
+    String menuList = "\n\t: BookStore :\n\n"
+            + "1.Add new book to stock\n"
+            + "2.Sell a book in stock\n"
+            + "3.Add Quantity a books\n"
+            + "4.Show list the title of all the books in stock\n"
+            + "5.List all the information about the books in stock\n"
+            + "6.Print out the total income of the bookstore\n"
+            + "7.EXIT..\n";
+
+    public void menuList() {
+        do {
+            System.out.println("\n" + menuList);
             System.out.print("Select your option : ");
             select = input.nextInt();
-            switch(select){
+            switch (select) {
                 case 1:
-                    System.out.print("Enter a title of book : ");
+                    System.out.print("\nEnter a title of book : ");
                     String title = input.next();
                     System.out.print("Enter a price of book : ");
                     double price = input.nextInt();
                     System.out.print("Enter a quantity of book : ");
                     int quantity = input.nextInt();
-                    Book book = new Book(title,price,quantity);
+                    Book book = new Book(title, price, quantity);
                     bookstore.addNewBook(book);
-                    System.out.println();
                     break;
                 case 2:
                     System.out.println("Selling books :");
@@ -48,34 +50,27 @@ public class BookStore {
                     bookstore.sellBook(s_title, s_quan);
                     break;
                 case 3:
-                    System.out.println("\t: Add Quantity a books : ");      
+                    System.out.println("\n\t: Add Quantity a books : ");
                     System.out.print("Enter a title your want to add quantity : ");
                     String a_title = input.next();
                     System.out.print("Enter amount of quantity your want to add : ");
                     int a_quantity = input.nextInt();
-                    bookstore.addBookQuantity(a_title,a_quantity);
-                    break;    
+                    bookstore.addBookQuantity(a_title, a_quantity);
+                    break;
                 case 4:
-                    System.out.println();
-                    System.out.println("\t: List of Titles :");
+                    System.out.println("\n\t: List of Titles : ");
                     bookstore.listTitles();
-                    System.out.println();
                     break;
                 case 5:
-                    System.out.println("\t: List information of books :");
+                    System.out.println("\n\t: List information of books : \n");
                     bookstore.listBooks();
-                    System.out.println();
                     break;
                 case 6:
-                    System.out.println("Total income of book store : ");
                     bookstore.getIncome();
                     break;
-  
             }
-            
-        }while(select != 7);
-               
-        
+
+        } while (select != 7);
+
     }
-    
 }
