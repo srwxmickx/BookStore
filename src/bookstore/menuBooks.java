@@ -22,7 +22,7 @@ public class menuBooks {
             + "3.Add Quantity a books\n"
             + "4.Show list the title of all the books in stock\n"
             + "5.List all the information about the books in stock\n"
-            + "6.Print out the total income of the bookstore\n"
+            + "6.Print out the total amount and total income of the bookstore\n"
             + "7.Restore BookStore\n"
             + "8.EXIT..\n";
 
@@ -41,14 +41,16 @@ public class menuBooks {
                     int quantity = input.nextInt();
                     Book book = new Book(title, price, quantity);
                     bookstore.addNewBook(book);
+                    System.out.println("--------------------------\nbook is already in stock.");
                     break;
                 case 2:
                     System.out.println("\nSelling books :");
                     System.out.print("Enter a title want to sell : ");
                     String s_title = input.next();
                     System.out.print("Enter a quantity : ");
-                    int s_quan = input.nextInt();
-                    bookstore.sellBook(s_title, s_quan);
+                    int s_quantity = input.nextInt();
+                    bookstore.sellBook(s_title, s_quantity);          
+                    System.out.println("--------------------------\nbooks is sold.\nTotal Amount : " + s_quantity + "\nAmount received : " + bookstore.gettotalReceieve());               
                     break;
                 case 3:
                     System.out.println("\n\t: Add Quantity a books : \n");
@@ -57,6 +59,7 @@ public class menuBooks {
                     System.out.print("Enter amount of quantity your want to add : ");
                     int a_quantity = input.nextInt();
                     bookstore.addBookQuantity(a_title, a_quantity);
+                    System.out.println("---------------------------\nQuantity added successfully\n ");
                     break;
                 case 4:
                     System.out.println("\n\t: List of Titles : \n");
@@ -67,14 +70,22 @@ public class menuBooks {
                     bookstore.listBooks();
                     break;
                 case 6:
-                    bookstore.getIncome();
+                    System.out.println("\nTotal Amount : " + bookstore.gettotalAmount());
+                    System.out.println("\nTotal income : " + bookstore.gettotalIncome());
                     break;
                 case 7:
+                    System.out.println("------------------------------\nBookStore has been restore.");
                     bookstore.restore();
                     break;
             }
 
         } while (select != 8);
+
+    }
+
+    public static void main(String[] args) {
+        menuBooks books = new menuBooks();
+        books.menuList();
 
     }
 }
