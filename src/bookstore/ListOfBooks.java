@@ -17,13 +17,9 @@ public class ListOfBooks {
     }
 
     public void addNewBook(Book addBook) { //เพิ่มชื่อหนังสือ
-        if (totalBooks >= 1) {
-            System.out.println("\n *************Sorry , The space is not enough");
-        } else {
             books[totalBooks] = addBook;
             totalBooks++;
             System.out.println("--------------------------\nbook is already in stock.");
-        }
     }
 
     public void addBookQuantity(String title, int quantity) { // เพิ่มจำนวนหนังสือ
@@ -107,5 +103,8 @@ public class ListOfBooks {
     public int getTotalAmount() {
         return totalAmount;
     }
-
+    
+    public int  getTotalBook(){
+        return totalBooks;
+    }
 }

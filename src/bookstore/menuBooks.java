@@ -33,14 +33,18 @@ public class menuBooks {
             select = input.nextInt();
             switch (select) {
                 case 1:
-                    System.out.print("\nEnter a title of book : ");
-                    String title = input.next();
-                    System.out.print("Enter a price of book : ");
-                    double price = input.nextInt();
-                    System.out.print("Enter a quantity of book : ");
-                    int quantity = input.nextInt();
-                    Book book = new Book(title, price, quantity);
-                    bookstore.addNewBook(book);
+                    if (bookstore.getTotalBook() <= 9) {
+                        System.out.print("\nEnter a title of book : ");
+                        String title = input.next();
+                        System.out.print("Enter a price of book : ");
+                        double price = input.nextInt();
+                        System.out.print("Enter a quantity of book : ");
+                        int quantity = input.nextInt();
+                        Book book = new Book(title, price, quantity);
+                        bookstore.addNewBook(book);
+                    } else {
+                        System.out.println("\n *************Sorry , The space is not enough");
+                    }
 //                    System.out.println("--------------------------\nbook is already in stock.");
                     break;
                 case 2:
