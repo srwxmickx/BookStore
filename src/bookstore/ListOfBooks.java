@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class ListOfBooks {
 
-    private Book[] books; // อาเรย์เก็บลิสหนังสือ
-    private int totalBooks; //จำนวนหนังสือทั้งหมด
+    private Book[] books; 
+    private int totalBooks; 
     private boolean checkstock;
     private double totalReceive = 0;
     private int totalAmount = 0;
@@ -16,13 +16,12 @@ public class ListOfBooks {
         totalBooks = 0;
     }
 
-    public void addNewBook(Book addBook) { //เพิ่มชื่อหนังสือ
-            books[totalBooks] = addBook;
-            totalBooks++;
-            System.out.println("--------------------------\nbook is already in stock.");
+    public void addNewBook(Book addBook) { 
+        books[totalBooks] = addBook;
+        totalBooks++;
     }
 
-    public void addBookQuantity(String title, int quantity) { // เพิ่มจำนวนหนังสือ
+    public void addBookQuantity(String title, int quantity) { 
         for (int i = 0; i < totalBooks; i++) {
             if (title.equals(books[i].getTitle())) {
                 books[i].addQuantity(quantity);
@@ -37,7 +36,6 @@ public class ListOfBooks {
                     System.out.println("\nNot enough books for sale.");
                     return false;
                 } else if (quantity <= books[i].getQuantity() && books[i].getQuantity() != 0) {
-                    System.out.println("--------------------------\nbooks is sold.\nAmount received : " + totalReceive + " baht");
                     return true;
                 } else {
                     System.out.println("\nSorry... " + title + " is out of stock.\n");
@@ -49,7 +47,7 @@ public class ListOfBooks {
         return false;
     }
 
-    public void sellBook(String title, int quantity) { //ขายหนังสือ - ลดจำนวน quantity ลง
+    public boolean sellBook(String title, int quantity) { 
         checkstock = checkInStock(title, quantity);
         if (checkstock == true) {
             for (int i = 0; i < totalBooks; i++) {
@@ -63,21 +61,10 @@ public class ListOfBooks {
             }
 
         }
+        return false;
     }
 
-//    public void listTitles() { // แสดง list ของชื่อหนังสือ (เฉพาะชื่อ)
-//        if (totalBooks != 0) {
-//            for (int i = 0; i < totalBooks; i++) {
-//                System.out.println(books[i].getTitle());
-//
-//            }
-//        } else {
-//            System.out.println("Not found book in store.");
-//        }
-//
-//    }
-
-    public void listBooks() {// แสดง list ของชื่อหนังสือ ราคาและปริมาณที่มีอยู่ในร้าน
+    public void listBooks() {
         if (totalBooks != 0) {
             for (int i = 0; i < totalBooks; i++) {
                 System.out.print(books[i].toString());;
@@ -87,7 +74,7 @@ public class ListOfBooks {
         }
     }
 
-    public void restore() { // คืนค่า bookstore กลับไปเริ่มต้น
+    public void restore() { 
         totalBooks = 0;
         totalIncome = 0;
         totalAmount = 0;
@@ -104,8 +91,12 @@ public class ListOfBooks {
     public int getTotalAmount() {
         return totalAmount;
     }
-    
-    public int  getTotalBook(){
+
+    public int getTotalBook() {
         return totalBooks;
+    }
+
+    public boolean getStock() {
+        return checkstock;
     }
 }

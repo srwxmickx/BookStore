@@ -41,10 +41,10 @@ public class menuBooks {
                         int quantity = input.nextInt();
                         Book book = new Book(title, price, quantity);
                         bookstore.addNewBook(book);
+                        System.out.println("--------------------------\nbook is already in stock.");
                     } else {
-                        System.out.println("\n *************Sorry , The space is not enough");
+                        System.out.println("--------------------------\nSorry can't add book, The space is not enough.");
                     }
-//                    System.out.println("--------------------------\nbook is already in stock.");
                     break;
                 case 2:
                     System.out.println("\nSelling books :");
@@ -53,7 +53,9 @@ public class menuBooks {
                     System.out.print("Enter a quantity : ");
                     int s_quantity = input.nextInt();
                     bookstore.sellBook(s_title, s_quantity);
-//                    System.out.println("--------------------------\nbooks is sold.\nAmount received : " + bookstore.getTotalReceieve() + " baht");
+                    if (bookstore.getStock() == true) {
+                        System.out.println("--------------------------\nbooks is sold.\nAmount received : " + bookstore.getTotalReceieve() + " baht");
+                    }
                     break;
                 case 3:
                     System.out.println("\n\t: Add Quantity a books : \n");
@@ -64,10 +66,6 @@ public class menuBooks {
                     bookstore.addBookQuantity(a_title, a_quantity);
                     System.out.println("---------------------------\nQuantity added successfully\n ");
                     break;
-//                case 4:
-//                    System.out.println("\n\t: List of Titles : \n");
-//                    bookstore.listTitles();
-//                    break;
                 case 4:
                     System.out.println("\n\t: List information of books : \n");
                     bookstore.listBooks();

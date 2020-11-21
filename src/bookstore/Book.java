@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class Book {
 
-    private String title; //ชื่อหนังสือ
-    private double price; //ราคา
-    private int quantity; //ปริมาณ
+    private String title; 
+    private double price; 
+    private int quantity; 
 
     public Book(String title, double price, int quantity) {
         this.title = title;
@@ -26,11 +26,11 @@ public class Book {
         return quantity;
     }
 
-    public void addQuantity(int amount) { // เพิ่มจำนวนหนังสือ
+    public void addQuantity(int amount) { 
         quantity += amount;
     }
 
-    public void buy(int amount) { // ซื้อหนังสือ
+    public void buy(int amount) { 
         quantity -= amount;
     }
 
