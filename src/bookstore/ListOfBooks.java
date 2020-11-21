@@ -12,13 +12,18 @@ public class ListOfBooks {
     private double totalIncome = 0;
 
     public ListOfBooks() {
-        books = new Book[100];
+        books = new Book[9];
         totalBooks = 0;
     }
 
     public void addNewBook(Book addBook) { //เพิ่มชื่อหนังสือ
-        books[totalBooks] = addBook;
-        totalBooks++;
+        if (totalBooks >= 1) {
+            System.out.println("\n *************Sorry , The space is not enough");
+        } else {
+            books[totalBooks] = addBook;
+            totalBooks++;
+            System.out.println("--------------------------\nbook is already in stock.");
+        }
     }
 
     public void addBookQuantity(String title, int quantity) { // เพิ่มจำนวนหนังสือ
@@ -34,17 +39,16 @@ public class ListOfBooks {
             if (title.equals(books[i].getTitle())) {
                 if (quantity > books[i].getQuantity() && books[i].getQuantity() != 0) {
                     System.out.println("\nNot enough books for sale.");
-                    return false;     
+                    return false;
                 } else if (quantity <= books[i].getQuantity() && books[i].getQuantity() != 0) {
-                    return true;          
+                    return true;
                 } else {
                     System.out.println("\nSorry... " + title + " is out of stock.\n");
                     return false;
-                    
+
                 }
             }
         }
-
         return false;
     }
 
@@ -57,13 +61,12 @@ public class ListOfBooks {
                     totalAmount += quantity;
                     totalReceive = ((books[i].getPrice()) * quantity);
                     totalIncome += totalReceive;
-                    
+
                 }
             }
-           
+
         }
     }
-    
 
     public void listTitles() { // แสดง list ของชื่อหนังสือ (เฉพาะชื่อ)
         if (totalBooks != 0) {
@@ -93,14 +96,15 @@ public class ListOfBooks {
         totalAmount = 0;
     }
 
-    public double gettotalIncome() {
+    public double getTotalIncome() {
         return totalIncome;
     }
 
-    public double gettotalReceieve() {
+    public double getTotalReceieve() {
         return totalReceive;
     }
-    public int gettotalAmount(){
+
+    public int getTotalAmount() {
         return totalAmount;
     }
 

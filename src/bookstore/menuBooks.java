@@ -41,7 +41,7 @@ public class menuBooks {
                     int quantity = input.nextInt();
                     Book book = new Book(title, price, quantity);
                     bookstore.addNewBook(book);
-                    System.out.println("--------------------------\nbook is already in stock.");
+//                    System.out.println("--------------------------\nbook is already in stock.");
                     break;
                 case 2:
                     System.out.println("\nSelling books :");
@@ -49,8 +49,8 @@ public class menuBooks {
                     String s_title = input.next();
                     System.out.print("Enter a quantity : ");
                     int s_quantity = input.nextInt();
-                    bookstore.sellBook(s_title, s_quantity);          
-                    System.out.println("--------------------------\nbooks is sold.\nTotal Amount : " + s_quantity + "\nAmount received : " + bookstore.gettotalReceieve());               
+                    bookstore.sellBook(s_title, s_quantity);
+                    System.out.println("--------------------------\nbooks is sold.\nAmount received : " + bookstore.getTotalReceieve() + " baht");
                     break;
                 case 3:
                     System.out.println("\n\t: Add Quantity a books : \n");
@@ -70,8 +70,8 @@ public class menuBooks {
                     bookstore.listBooks();
                     break;
                 case 6:
-                    System.out.println("\nTotal Amount : " + bookstore.gettotalAmount());
-                    System.out.println("\nTotal income : " + bookstore.gettotalIncome());
+                    System.out.println("\nTotal Amount : " + bookstore.getTotalAmount() + " books");
+                    System.out.println("\nTotal Income : " + bookstore.getTotalIncome() + " baht");
                     break;
                 case 7:
                     System.out.println("------------------------------\nBookStore has been restore.");
