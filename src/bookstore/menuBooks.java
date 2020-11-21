@@ -54,7 +54,7 @@ public class menuBooks {
                     System.out.print("Enter a quantity : ");
                     int s_quantity = input.nextInt();
                     bookstore.sellBook(s_title, s_quantity);
-                    System.out.println("--------------------------\nbooks is sold.\nAmount received : " + bookstore.getTotalReceieve() + " baht");
+//                    System.out.println("--------------------------\nbooks is sold.\nAmount received : " + bookstore.getTotalReceieve() + " baht");
                     break;
                 case 3:
                     System.out.println("\n\t: Add Quantity a books : \n");

@@ -37,6 +37,7 @@ public class ListOfBooks {
                     System.out.println("\nNot enough books for sale.");
                     return false;
                 } else if (quantity <= books[i].getQuantity() && books[i].getQuantity() != 0) {
+                    System.out.println("--------------------------\nbooks is sold.\nAmount received : " + totalReceive + " baht");
                     return true;
                 } else {
                     System.out.println("\nSorry... " + title + " is out of stock.\n");
