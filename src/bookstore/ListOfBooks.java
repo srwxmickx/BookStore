@@ -65,17 +65,17 @@ public class ListOfBooks {
         }
     }
 
-    public void listTitles() { // แสดง list ของชื่อหนังสือ (เฉพาะชื่อ)
-        if (totalBooks != 0) {
-            for (int i = 0; i < totalBooks; i++) {
-                System.out.println(books[i].getTitle());
-
-            }
-        } else {
-            System.out.println("Not found book in store.");
-        }
-
-    }
+//    public void listTitles() { // แสดง list ของชื่อหนังสือ (เฉพาะชื่อ)
+//        if (totalBooks != 0) {
+//            for (int i = 0; i < totalBooks; i++) {
+//                System.out.println(books[i].getTitle());
+//
+//            }
+//        } else {
+//            System.out.println("Not found book in store.");
+//        }
+//
+//    }
 
     public void listBooks() {// แสดง list ของชื่อหนังสือ ราคาและปริมาณที่มีอยู่ในร้าน
         if (totalBooks != 0) {

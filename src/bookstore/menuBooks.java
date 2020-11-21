@@ -20,11 +20,10 @@ public class menuBooks {
             + "1.Add new books to stock\n"
             + "2.Sell a books in stock\n"
             + "3.Add Quantity a books\n"
-            + "4.Show list the title of all the books in stock\n"
-            + "5.List all the information about the books in stock\n"
-            + "6.Print out the total amount and total income of the bookstore\n"
-            + "7.Restore BookStore\n"
-            + "8.EXIT..\n";
+            + "4.List all the information about the books in stock\n"
+            + "5.Print out the total amount and total income of the bookstore\n"
+            + "6.Restore BookStore\n"
+            + "7.EXIT..\n";
 
     public void menuList() {
         do {
@@ -65,25 +64,25 @@ public class menuBooks {
                     bookstore.addBookQuantity(a_title, a_quantity);
                     System.out.println("---------------------------\nQuantity added successfully\n ");
                     break;
+//                case 4:
+//                    System.out.println("\n\t: List of Titles : \n");
+//                    bookstore.listTitles();
+//                    break;
                 case 4:
-                    System.out.println("\n\t: List of Titles : \n");
-                    bookstore.listTitles();
-                    break;
-                case 5:
                     System.out.println("\n\t: List information of books : \n");
                     bookstore.listBooks();
                     break;
-                case 6:
+                case 5:
                     System.out.println("\nTotal Amount : " + bookstore.getTotalAmount() + " books");
                     System.out.println("\nTotal Income : " + bookstore.getTotalIncome() + " baht");
                     break;
-                case 7:
+                case 6:
                     System.out.println("------------------------------\nBookStore has been restore.");
                     bookstore.restore();
                     break;
             }
 
-        } while (select != 8);
+        } while (select != 7);
 
     }
 
