@@ -36,7 +36,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return "\nTitle : " + title + "   \t" + "Price : " + price + "\t" + "InStock : " + quantity + "\n-----------------------------------------------------";
+        return "\nTitle : " + title + "   \t" + "Price : " + price + " baht"+"\t" + "InStock : " + quantity + " book"+"\n-----------------------------------------------------";
 
     }
 

@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class ListOfBooks {
 
-    private Book[] books; 
-    private int totalBooks; 
+    private Book[] books;
+    private int totalBooks;
     private boolean checkstock;
     private double totalReceive = 0;
     private int totalAmount = 0;
@@ -16,12 +16,32 @@ public class ListOfBooks {
         totalBooks = 0;
     }
 
-    public void addNewBook(Book addBook) { 
+    public void addNewBook(Book addBook) {
         books[totalBooks] = addBook;
         totalBooks++;
     }
 
-    public void addBookQuantity(String title, int quantity) { 
+    public double getTotalIncome() {
+        return totalIncome;
+    }
+
+    public double getTotalReceieve() {
+        return totalReceive;
+    }
+
+    public int getTotalAmount() {
+        return totalAmount;
+    }
+
+    public int getTotalBook() {
+        return totalBooks;
+    }
+
+    public boolean getCheckStock() {
+        return checkstock;
+    }
+
+    public void addBookQuantity(String title, int quantity) {
         for (int i = 0; i < totalBooks; i++) {
             if (title.equals(books[i].getTitle())) {
                 books[i].addQuantity(quantity);
@@ -47,7 +67,7 @@ public class ListOfBooks {
         return false;
     }
 
-    public boolean sellBook(String title, int quantity) { 
+    public boolean sellBook(String title, int quantity) {
         checkstock = checkInStock(title, quantity);
         if (checkstock == true) {
             for (int i = 0; i < totalBooks; i++) {
@@ -56,7 +76,6 @@ public class ListOfBooks {
                     totalAmount += quantity;
                     totalReceive = ((books[i].getPrice()) * quantity);
                     totalIncome += totalReceive;
-
                 }
             }
 
@@ -74,29 +93,10 @@ public class ListOfBooks {
         }
     }
 
-    public void restore() { 
+    public void restore() {
         totalBooks = 0;
         totalIncome = 0;
         totalAmount = 0;
     }
 
-    public double getTotalIncome() {
-        return totalIncome;
-    }
-
-    public double getTotalReceieve() {
-        return totalReceive;
-    }
-
-    public int getTotalAmount() {
-        return totalAmount;
-    }
-
-    public int getTotalBook() {
-        return totalBooks;
-    }
-
-    public boolean getStock() {
-        return checkstock;
-    }
 }

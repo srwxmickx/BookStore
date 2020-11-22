@@ -36,7 +36,7 @@ public class menuBooks {
                         System.out.print("\nEnter a title of book : ");
                         String title = input.next();
                         System.out.print("Enter a price of book : ");
-                        double price = input.nextInt();
+                        double price = input.nextDouble();
                         System.out.print("Enter a quantity of book : ");
                         int quantity = input.nextInt();
                         Book book = new Book(title, price, quantity);
@@ -53,9 +53,9 @@ public class menuBooks {
                     System.out.print("Enter a quantity : ");
                     int s_quantity = input.nextInt();
                     bookstore.sellBook(s_title, s_quantity);
-                    if (bookstore.getStock() == true) {
-                        System.out.println("--------------------------\nbooks is sold.\nAmount received : " + bookstore.getTotalReceieve() + " baht");
-                    }
+                    if (bookstore.getCheckStock() == true) {
+                        System.out.println("--------------------------\nbooks is sold.\nAmount received : " + bookstore.getTotalReceieve() + " baht");           
+                    }      
                     break;
                 case 3:
                     System.out.println("\n\t: Add Quantity a books : \n");
@@ -64,7 +64,7 @@ public class menuBooks {
                     System.out.print("Enter amount of quantity your want to add : ");
                     int a_quantity = input.nextInt();
                     bookstore.addBookQuantity(a_title, a_quantity);
-                    System.out.println("---------------------------\nQuantity added successfully\n ");
+                    System.out.println("---------------------------\nQuantity added successfully\n ");                          
                     break;
                 case 4:
                     System.out.println("\n\t: List information of books : \n");
@@ -87,6 +87,5 @@ public class menuBooks {
     public static void main(String[] args) {
         menuBooks books = new menuBooks();
         books.menuList();
-
     }
 }
