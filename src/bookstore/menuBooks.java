@@ -13,10 +13,13 @@ import java.util.Scanner;
  */
 public class menuBooks {
 
-    ListOfBooks bookstore = new ListOfBooks();
-    Scanner input = new Scanner(System.in);
-    int select;
-    String menuList = "\n\t: BookStore :\n\n"
+    
+
+    public static void main (String[] args) {
+        ListOfBooks bookstore = new ListOfBooks();
+        Scanner input = new Scanner(System.in);
+        int select;
+        String menuList = "\n\t: BookStore :\n\n"
             + "1.Add new books to stock\n"
             + "2.Sell a books in stock\n"
             + "3.Add Quantity a books\n"
@@ -24,8 +27,6 @@ public class menuBooks {
             + "5.Print out the total amount and total income of the bookstore\n"
             + "6.Restore BookStore\n"
             + "7.EXIT..\n";
-
-    public void menuList() {
         do {
             System.out.println("\n" + menuList);
             System.out.print("Select your option : ");
@@ -84,8 +85,6 @@ public class menuBooks {
 
     }
 
-    public static void main(String[] args) {
-        menuBooks books = new menuBooks();
-        books.menuList();
-    }
+
+  
 }
